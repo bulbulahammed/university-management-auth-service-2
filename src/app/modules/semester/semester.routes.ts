@@ -11,7 +11,11 @@ router.post(
   AcademicSemesterController.createSemester
 );
 // Update Single/Multiple Semester
-router.patch('/:id', AcademicSemesterController.updateSemester);
+router.patch(
+  '/:id',
+  validateRequest(AcademicSemesterValidation.updateAcademicSemesterZodSchema),
+  AcademicSemesterController.updateSemester
+);
 // Get Single Semester Route
 router.get('/:id', AcademicSemesterController.getSingleSemester);
 // Get All Semester route
