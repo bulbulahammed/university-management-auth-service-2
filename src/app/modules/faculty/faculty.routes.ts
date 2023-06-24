@@ -11,4 +11,7 @@ router.post(
   AcademicFacultyController.createFaculty
 );
 
+// Create Faculty Route
+router.get('/', AcademicFacultyController.getAllFaculties);
+
 export const FacultyRoutes = router;
