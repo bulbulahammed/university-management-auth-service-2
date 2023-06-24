@@ -21,7 +21,6 @@ const createSemester = async (
   if (academicSemesterTitleCodeMapper[payload.title] !== payload.code) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'Invalid Semester Code!');
   }
-
   const result = await AcademicSemester.create(payload);
   return result;
 };
