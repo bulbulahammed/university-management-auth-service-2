@@ -13,6 +13,13 @@ router.post(
 // Get Single Faculty Route
 router.get('/:id', AcademicFacultyController.getSingleFaculty);
 
+// Update Faculty Route
+router.patch(
+  '/:id',
+  validateRequest(AcademicFacultyValidation.updateFacultyZodSchema),
+  AcademicFacultyController.updateFaculty
+);
+
 // Create Faculty Route
 router.get('/', AcademicFacultyController.getAllFaculties);
 
