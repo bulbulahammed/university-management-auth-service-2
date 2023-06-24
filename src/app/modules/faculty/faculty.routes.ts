@@ -10,6 +10,8 @@ router.post(
   validateRequest(AcademicFacultyValidation.createFacultyZodSchema),
   AcademicFacultyController.createFaculty
 );
+// Get Single Faculty Route
+router.get('/:id', AcademicFacultyController.getSingleFaculty);
 
 // Create Faculty Route
 router.get('/', AcademicFacultyController.getAllFaculties);
