@@ -16,6 +16,9 @@ router.post(
 
 // Get Single Department Router
 router.get('/:id', AcademicDepartmentController.getSingleDepartment);
+
+// Update Department Route
+router.patch('/:id', AcademicDepartmentController.updateDepartment);
 // get All Department Route
 router.get('/', AcademicDepartmentController.getAllDepartments);
 
