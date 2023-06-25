@@ -5,6 +5,7 @@ import { AcademicDepartmentValidation } from './department.validation';
 
 const router = express.Router();
 
+// Create Department Route
 router.post(
   '/create-department',
   validateRequest(
@@ -12,5 +13,8 @@ router.post(
   ),
   AcademicDepartmentController.createDepartment
 );
+
+// get All Department Route
+router.get('/', AcademicDepartmentController.getAllDepartments);
 
 export const AcademicDepartmentRoutes = router;
