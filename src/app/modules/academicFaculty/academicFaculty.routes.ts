@@ -1,7 +1,7 @@
 import express from 'express';
 import validateRequest from '../../middlewares/validateRequest';
-import { AcademicFacultyController } from './faculty.controller';
-import { AcademicFacultyValidation } from './faculty.validation';
+import { AcademicFacultyController } from './academicFaculty.controller';
+import { AcademicFacultyValidation } from './academicFaculty.validation';
 const router = express.Router();
 
 // Create Faculty Route
@@ -25,4 +25,4 @@ router.delete('/:id', AcademicFacultyController.deleteFaculty);
 // Create Faculty Route
 router.get('/', AcademicFacultyController.getAllFaculties);
 
-export const FacultyRoutes = router;
+export const academicFacultyRoutes = router;

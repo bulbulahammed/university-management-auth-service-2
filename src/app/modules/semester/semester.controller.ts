@@ -66,7 +66,7 @@ const updateSemester = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-// Update Semester
+// Delete Semester
 const deleteSemester = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
   const result = await AcademicSemesterService.deleteSemester(id);
