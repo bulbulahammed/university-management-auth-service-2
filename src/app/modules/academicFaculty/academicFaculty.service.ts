@@ -2,9 +2,12 @@ import { SortOrder } from 'mongoose';
 import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/paginations';
-import { academicFacultySearchableFields } from './faculty.constant';
-import { IAcademicFaculty, IAcademicFacultyFilters } from './faculty.interface';
-import { AcademicFaculty } from './faculty.model';
+import { academicFacultySearchableFields } from './academicFaculty.constant';
+import {
+  IAcademicFaculty,
+  IAcademicFacultyFilters,
+} from './academicFaculty.interface';
+import { AcademicFaculty } from './academicFaculty.model';
 
 // Create User Service
 const createFaculty = async (

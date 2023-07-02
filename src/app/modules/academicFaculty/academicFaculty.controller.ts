@@ -4,9 +4,9 @@ import { paginationFields } from '../../../constants/pagination';
 import catchAsync from '../../../shared/catchAsync';
 import pick from '../../../shared/pick';
 import sendResponse from '../../../shared/sendResponse';
-import { academicFacultyFilterableFields } from './faculty.constant';
-import { IAcademicFaculty } from './faculty.interface';
-import { AcademicFacultyService } from './faculty.service';
+import { academicFacultyFilterableFields } from './academicFaculty.constant';
+import { IAcademicFaculty } from './academicFaculty.interface';
+import { AcademicFacultyService } from './academicFaculty.service';
 
 // Create Faculty Controller
 const createFaculty = catchAsync(async (req: Request, res: Response) => {
