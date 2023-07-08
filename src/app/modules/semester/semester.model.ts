@@ -6,7 +6,7 @@ import {
   academicSemesterMonths,
   academicSemesterTitles,
 } from './semester.constant';
-import { AcademicSemesterModel, IAcademicSemester } from './semester.interface';
+import { IAcademicSemester } from './semester.interface';
 
 const academicSemesterSchema = new Schema<IAcademicSemester>(
   {
@@ -43,7 +43,6 @@ const academicSemesterSchema = new Schema<IAcademicSemester>(
   }
 );
 
-// Handle Same Year Same Semester issue
 academicSemesterSchema.pre('save', async function (next) {
   const isExist = await AcademicSemester.findOne({
     title: this.title,
@@ -52,14 +51,13 @@ academicSemesterSchema.pre('save', async function (next) {
   if (isExist) {
     throw new ApiError(
       httpStatus.CONFLICT,
-      'Academic Semester is Already Exist!'
+      'Academic semester is already exist !'
     );
   }
-  // next is not from Express it's from mongoose hook
   next();
 });
 
-export const AcademicSemester = model<IAcademicSemester, AcademicSemesterModel>(
+export const AcademicSemester = model<IAcademicSemester>(
   'AcademicSemester',
   academicSemesterSchema
 );
