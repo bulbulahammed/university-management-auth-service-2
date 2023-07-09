@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { bloodGroup, gender } from '../student/student.constant';
 
+// User Validation
 const createUserZodSchema = z.object({
   body: z.object({
     password: z.string().optional(),
@@ -90,6 +91,7 @@ const createUserZodSchema = z.object({
   }),
 });
 
+// Faculty Validation
 const createFacultyZodSchema = z.object({
   body: z.object({
     password: z.string().optional(),
@@ -146,6 +148,7 @@ const createFacultyZodSchema = z.object({
   }),
 });
 
+// Admin Validation
 const createAdminZodSchema = z.object({
   body: z.object({
     password: z.string().optional(),
